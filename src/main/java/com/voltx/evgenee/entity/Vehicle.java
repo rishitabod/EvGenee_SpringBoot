@@ -1,25 +1,32 @@
 package com.voltx.evgenee.entity;
 
-
 import com.voltx.evgenee.enums.Type;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@AllArgsConstructor
+@Table(name = "vehicles")
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Vehicle {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column
-    private String name;
+    private String model;
+    private String licensePlate;
 
-    @Column(unique = true, nullable = false)
-    private String reg_name;
+    @Enumerated(EnumType.STRING)
     private Type type;
 
+    private Double batteryCapacity;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private EvUser owner;
 }
