@@ -1,8 +1,26 @@
 package com.voltx.evgenee.entity;
 
-public class Admin {
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    // SOS
-    // owner kuch station add karega to admin permission dega
-    // bookings relation
+@Entity
+@Table(name = "admins")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Admin {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String contact;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User authUser;
 }

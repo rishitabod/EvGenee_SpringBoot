@@ -3,16 +3,26 @@ package com.voltx.evgenee.entity;
 
 import com.voltx.evgenee.enums.Role;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.Instant;
+
 
 @Entity
+@Table(name = "users")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    private String username;
     @Column(unique = true)
     private String email;
     private String password;
@@ -20,4 +30,6 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    private Instant createdAt;
+    private boolean enabled = true;
 }
