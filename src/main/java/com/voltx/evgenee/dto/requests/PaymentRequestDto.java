@@ -1,5 +1,7 @@
 package com.voltx.evgenee.dto.requests;
 
+import com.voltx.evgenee.enums.PaymentMethod;
+import com.voltx.evgenee.enums.PaymentStatus;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,10 +26,10 @@ public class PaymentRequestDto {
     private BigDecimal amount;
 
     @NotBlank(message = "Payment method cannot be blank")
-    private String method;
+    private PaymentMethod method;
 
     @NotBlank(message = "Payment status cannot be blank")
-    private String status;
+    private PaymentStatus status;
 
     private String transactionId;
     private Instant paidAt;

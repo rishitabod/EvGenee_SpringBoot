@@ -1,6 +1,6 @@
 package com.voltx.evgenee.dto.requests;
 
-import com.voltx.evgenee.enums.Type;
+import com.voltx.evgenee.enums.VehicleType;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -21,7 +21,7 @@ public class VehicleRequestDto {
     private String licensePlate;
 
     @NotNull(message = "Vehicle type is required")
-    private Type type;
+    private VehicleType type;
 
     @NotNull(message = "Battery capacity is required")
     @Min(value = 0, message = "Battery capacity must be greater than or equal to 0")
