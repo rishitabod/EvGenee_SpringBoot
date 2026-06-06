@@ -1,6 +1,5 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.responses;
 
-import com.voltx.evgenee.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,11 +11,12 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserResponseDto {
+public class ReviewResponseDto {
     private Long id;
-    private String username;
-    private String email;
-    private Role role;
+    private Integer rating;
+    private String comment;
+    private Long stationId;
+    private Long userId;
+    private String userName;
     private Instant createdAt;
-    private boolean enabled;
 }

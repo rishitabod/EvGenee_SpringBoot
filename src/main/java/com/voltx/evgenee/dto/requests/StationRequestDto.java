@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.requests;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +11,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class StationOwnerResponseDto {
+public class EvUserResponseDto {
     private Long id;
-    private String name;
-    private String contact;
+    private String fullName;
+    private String phone;
+    private String address;
     private UserResponseDto authUser;
-    private List<StationResponseDto> stations;
+    private List<VehicleResponseDto> vehicles;
 }

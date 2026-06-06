@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.requests;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

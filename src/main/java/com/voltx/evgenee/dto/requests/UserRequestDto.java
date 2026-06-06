@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.requests;
 
 import com.voltx.evgenee.enums.Role;
 import jakarta.validation.constraints.Email;

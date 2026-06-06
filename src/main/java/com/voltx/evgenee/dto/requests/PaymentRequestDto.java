@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.requests;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

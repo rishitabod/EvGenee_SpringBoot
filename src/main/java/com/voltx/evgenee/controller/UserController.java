@@ -1,13 +1,11 @@
 package com.voltx.evgenee.controller;
 
+import com.voltx.evgenee.dto.requests.UserRequestDto;
 import com.voltx.evgenee.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -16,9 +14,14 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/register")
-    public ResponseEntity<?> registerUser(String obj) {
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(UserRequestDto obj) {
         String status = userService.register(obj);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody String obj) {
+        return ResponseEntity.ok("Accepted");
     }
 }

@@ -1,5 +1,6 @@
 package com.voltx.evgenee.entity;
 
+import com.voltx.evgenee.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,7 +35,8 @@ public class Booking {
     private Instant startTime;
     private Instant endTime;
 
-    private String status; // e.g., REQUESTED, CONFIRMED, COMPLETED, CANCELLED
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
 
     @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
     private Payment payment;

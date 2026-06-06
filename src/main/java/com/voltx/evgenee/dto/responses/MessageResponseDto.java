@@ -1,4 +1,4 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

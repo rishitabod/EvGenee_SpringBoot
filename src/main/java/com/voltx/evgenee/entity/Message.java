@@ -1,5 +1,6 @@
 package com.voltx.evgenee.entity;
 
+import com.voltx.evgenee.enums.MessageRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,6 +31,9 @@ public class Message {
 
     @Column(columnDefinition = "TEXT")
     private String content;
+
+    @Enumerated(EnumType.STRING)
+    private MessageRole role;
 
     private Instant sentAt;
     private boolean readFlag = false;

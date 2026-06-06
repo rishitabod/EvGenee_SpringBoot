@@ -1,6 +1,7 @@
-package com.voltx.evgenee.dto;
+package com.voltx.evgenee.dto.responses;
 
-import com.voltx.evgenee.enums.Type;
+
+import com.voltx.evgenee.enums.VehicleType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ public class VehicleResponseDto {
     private Long id;
     private String model;
     private String licensePlate;
-    private Type type;
+    private VehicleType type;
     private Double batteryCapacity;
     private Long ownerId;
 }

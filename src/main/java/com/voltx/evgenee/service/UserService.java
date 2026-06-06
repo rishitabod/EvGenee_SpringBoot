@@ -1,20 +1,8 @@
 package com.voltx.evgenee.service;
 
+import com.voltx.evgenee.dto.requests.UserRequestDto;
 
-import com.voltx.evgenee.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+public interface UserService {
 
-@Service
-@RequiredArgsConstructor
-public class UserService {
-
-    private final UserRepository userRepository;
-
-    public String register(String obj) {
-      //  String status = userRepository.save(obj);
-        return "Hello";
-    }
+    String register(UserRequestDto req);
 }

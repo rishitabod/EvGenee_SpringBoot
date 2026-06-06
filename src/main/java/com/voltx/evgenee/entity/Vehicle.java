@@ -1,6 +1,6 @@
 package com.voltx.evgenee.entity;
 
-import com.voltx.evgenee.enums.Type;
+import com.voltx.evgenee.enums.VehicleType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,7 +22,7 @@ public class Vehicle {
     private String licensePlate;
 
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private VehicleType type;
 
     private Double batteryCapacity;
 
